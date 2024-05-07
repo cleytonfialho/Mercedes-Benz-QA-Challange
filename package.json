@@ -1,0 +1,23 @@
+{
+  "name": "mercedez-benz-tests",
+  "version": "1.0.0",
+  "description": "Tests for Mercez-Benz Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "yarn playwright test",
+    "test:ci": "docker-compose up tests",
+    "build": "docker-compose build app"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "cleyton.fialho",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.43.1",
+    "@types/node": "^20.12.7"
+  },
+  "dependencies": {
+ 
+  }
+}
