@@ -22,6 +22,7 @@ pipeline {
             }
             post {
                 always {
+                    sh "docker cp \$(docker-compose ps -aq mercedes-benz-tests):/app/test-results ./"
                     archiveArtifacts artifacts: 'test-results/*', allowEmptyArchive: true
                     archiveArtifacts artifacts: 'src/tests/dataSavedFromTests/*', allowEmptyArchive: true
                 }

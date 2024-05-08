@@ -28,7 +28,7 @@ test.describe('ShopUsed at Mercedes-Benz', () => {
 
     const vehicleList = await pageUtils.shopContainer.getCarsInformation();
     const mostExpensive = pageUtils.shopContainer.findVehicleMostExpensive(vehicleList);
-    const lessExpensive = pageUtils.shopContainer.findVehicleLessExpensive(vehicleList);
+    //const lessExpensive = pageUtils.shopContainer.findVehicleLessExpensive(vehicleList);
   
     await pageUtils.shopContainer.goToVehiclePage(mostExpensive);
     await page.waitForLoadState();
