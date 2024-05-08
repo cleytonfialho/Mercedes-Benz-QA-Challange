@@ -1,0 +1,37 @@
+pipeline {
+    agent {
+        node {
+            label 'NodeExec' //Label of your Jenkins Node. It can be any
+        }
+    }
+     environment {
+        CI = true
+        customWorkspace = '/var/jenkins_home/workspace/Mercedez'
+    }
+
+    stages {
+        stage("Build App") {
+            steps("Build base image") {
+                    sh 'docker-compose build mercedes-benz-app'
+            }
+        }
+
+        stage("Automated Tests") {
+            steps("E2E") {
+                    sh 'docker-compose up mercedes-benz-tests'
+            }
+            post {
+                always {
+                    archiveArtifacts artifacts: 'test-results/*', allowEmptyArchive: true
+                    archiveArtifacts artifacts: 'src/tests/dataSavedFromTests/*', allowEmptyArchive: true
+                }
+            }
+        }
+    }   
+
+    post {
+        always {
+            sh 'docker-compose down'
+        }
+    }
+}

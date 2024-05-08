@@ -1,9 +1,9 @@
 import { type Page } from '@playwright/test';
 import { test, expect } from '../support/fixtures';
-import { testDataWithInvalidDiffClientInformation } from '../testData/ShopUsedScenariosData';
+import { testDataWithInvalidClientInformation } from '../testData/ShopUsedScenariosData';
 import { saveToFile } from '../support/saveToFile';
 
-const testData = testDataWithInvalidDiffClientInformation; //testDataWithInvalidDiffClientInformation; //testDataWithInvalidClientInformation;
+const testData = testDataWithInvalidClientInformation; //testDataWithInvalidDiffClientInformation;
 
 test.describe('ShopUsed at Mercedes-Benz', () => {
   test('Validate the negative path of enquiring the highest price', async ({ page, pageUtils }) => {

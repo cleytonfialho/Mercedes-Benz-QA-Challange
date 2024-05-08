@@ -1,0 +1,30 @@
+services:
+  mercedes-benz-app:
+    build:
+      context: .
+      dockerfile: ./.pipeline/Docker/mercedes-benz-app.dockerfile
+    volumes:
+      - ./:/app
+    environment:
+      - NODE_ENV=production
+      - CI=true
+    #command: yarn test
+  mercedes-benz-tests:
+    build:
+      context: .
+      dockerfile: ./.pipeline/Docker/mercedes-benz-tests.dockerfile
+    environment:
+      - NODE_ENV=production
+      - CI=true
+    command: yarn test
+  jenkins:
+    ports:
+      - 8080:8080
+    build:
+      context: .
+      dockerfile: ./.pipeline/Docker/jenkins.dockerfile
+    user: root
+    privileged: true
+    volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - /Users/cleytonfialho/jenkins:/var/jenkins_home ##Change for your local jenkins folder
