@@ -1,9 +1,6 @@
-# Use a Node.js base image
-FROM mercedes-mercedes-benz-tests
+FROM mercedes-benz-qa-challange-mercedes-benz-app
 
 ENV CI=true
 
-
-# Install dependencies
 CMD [ "yarn", "test" ]
 

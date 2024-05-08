@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "yarn playwright test",
-    "test:ci": "docker-compose up tests",
-    "build": "docker-compose build app"
+    "test:ci": "docker-compose up mercedes-benz-app"
   },
   "keywords": [
     "test"

@@ -8,7 +8,7 @@ services:
     environment:
       - NODE_ENV=production
       - CI=true
-    #command: yarn test
+    command: yarn test
   mercedes-benz-tests:
     build:
       context: .
@@ -17,6 +17,8 @@ services:
       - NODE_ENV=production
       - CI=true
     command: yarn test
+    depends_on:
+      -  mercedes-benz-app
   jenkins:
     ports:
       - 8080:8080

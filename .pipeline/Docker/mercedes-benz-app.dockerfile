@@ -1,4 +1,4 @@
-# Use a Node.js base image
+# Use Playwright as base image
 FROM mcr.microsoft.com/playwright:v1.43.1-jammy
 
 ENV CI=true
@@ -14,5 +14,4 @@ RUN yarn install --frozen-lockfile
 # Copy the rest of the application code to the container
 COPY . .
 
-# Run the Playwright tests
-#CMD ["yarn", "test"]
+CMD [ command ]

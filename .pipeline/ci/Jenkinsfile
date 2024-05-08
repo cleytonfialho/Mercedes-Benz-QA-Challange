@@ -1,12 +1,12 @@
 pipeline {
     agent {
         node {
-            label 'NodeExec' //Label of your Jenkins Node. It can be any
+            label 'NodeExec' //Label of your Jenkins Node. It can be any. You should change it in order to worker on your Jenkins
         }
     }
      environment {
         CI = true
-        customWorkspace = '/var/jenkins_home/workspace/Mercedez'
+        customWorkspace = '/var/jenkins_home/workspace/Mercedes'
     }
 
     stages {
