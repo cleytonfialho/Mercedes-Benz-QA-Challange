@@ -1,4 +1,4 @@
-# Mercedes Benz Challage - Cleyton
+# Mercedes Benz Challange - Cleyton
 
 - TASK 1 -> `Bug Report - TASK1.pdf`
 - TASK 2 -> `/src/tests/ShopUsed.test.spec.ts`
