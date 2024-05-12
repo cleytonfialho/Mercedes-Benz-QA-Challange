@@ -1,7 +1,7 @@
 {
-  "name": "mercedez-benz-tests",
+  "name": "mercedes-benz-tests",
   "version": "1.0.0",
-  "description": "Tests for Mercez-Benz Website",
+  "description": "Tests for Mercedes-Benz Website",
   "main": "index.js",
   "scripts": {
     "test": "yarn playwright test",
